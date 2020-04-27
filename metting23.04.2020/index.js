@@ -22,9 +22,9 @@ const numbersList = [1, 2, 3, 4, 5];
 
 const a = numbersList.pop();
 
-console.log(a);
+const lastNumber = a;
 
-console.log(numbersList);
+console.log(lastNumber);
 
 
 /* push - добавит элемент в конец массива */
@@ -51,8 +51,6 @@ const firstNumber = numbersList.shift();
 
 console.log(firstNumber);
 
-console.log(numbersList);
-
 
 /* unshift - добавит элемент в начало массива */
 
@@ -72,30 +70,30 @@ console.log(numbersList);
 /* ===> НЕ изменяют исходный массив <===== */
 /* ======================================= */
 
-function sum(a, b) {
-    return a + b;
-}
+// function sum(a, b) {
+//     return a + b;
+// }
 
-console.log(numbersList);
+// console.log(numbersList);
 
-const arr = [];
+// const arr = [];
 
-for (let i = 0; i < numbersList.length; i += 1) {
-    numbersList[i] = 4;
-}
+// for (let i = 0; i < numbersList.length; i += 1) {
+//     numbersList[i] = 4;
+// }
 
-const newArr = [];
+// const newArr = [];
 
-function func(item) {
-    newArr.push(item * item);
-    console.log(item);
+// function func(item) {
+//     newArr.push(item * item);
+//     console.log(item);
 
-}
+// }
 
-numbersList.forEach(func);
+// numbersList.forEach(func);
 
-console.log(numbersList);
-console.log(newArr);
+// console.log(numbersList);
+// console.log(newArr);
 
 
 /* метод map */
@@ -109,17 +107,17 @@ console.log(newArr);
 
 // ... code here
 function square(num) {
-    console.log('call');
+    // console.log('call');
     return num * num;
 }
 
-console.log(numbersList);
+// console.log(numbersList);
 
 const squaredNumbers = numbersList.map(square);
 
 console.log(squaredNumbers);
 
-console.log('are equal?', squaredNumbers === numbersList);
+// console.log('are equal?', squaredNumbers === numbersList);
 
 
 
@@ -135,7 +133,7 @@ console.log('are equal?', squaredNumbers === numbersList);
 
 // ... code here
 function filterFunc(num) {
-    console.log('call');
+    // console.log('call');
     return num % 2 === 0;
 
     // return true / false;
@@ -145,8 +143,8 @@ function filterFunc(num) {
 const evenNumbers = numbersList.filter(filterFunc);
 
 console.log(evenNumbers);
-console.log(numbersList);
-console.log(evenNumbers === numbersList);
+// console.log(numbersList);
+// console.log(evenNumbers === numbersList);
 
 
 
@@ -160,7 +158,7 @@ console.log(evenNumbers === numbersList);
 // ... code here
 
 function callback(num) {
-    console.log('call');
+    // console.log('call');
     return num % 2 === 1;
 }
 
@@ -169,7 +167,7 @@ const firstOdd = numbersList.find(callback);
 
 console.log(numbersList);
 
-console.log(firstOdd);
+// console.log(firstOdd);
 
 
 
