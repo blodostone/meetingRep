@@ -165,9 +165,7 @@ function callback(num) {
 
 const firstOdd = numbersList.find(callback);
 
-console.log(numbersList);
-
-// console.log(firstOdd);
+console.log(firstOdd);
 
 
 
