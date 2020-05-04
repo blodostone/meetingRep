@@ -1,6 +1,10 @@
 // input: userData, id
 // output: object;
 
+const userData = {
+    name: 'Sam'
+}
+
 function addPropertyV1(userData, userId) {
     userData.id = userId;
     return userData;
