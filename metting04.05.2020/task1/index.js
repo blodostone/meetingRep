@@ -15,7 +15,7 @@ function addPropertyV2(userData, userId) {
     return userData;
 }
 
-function addPropertyV3(userData, userId) {
+const addPropertyV3 = (userData, userId) => {
     Object.assign({}, userData, { id: userId });
     return userData;
 }
