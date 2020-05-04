@@ -16,8 +16,8 @@ function addPropertyV2(userData, userId) {
 }
 
 const addPropertyV3 = (userData, userId) => {
-    Object.assign({}, userData, { id: userId });
-    return userData;
+    const obj = Object.assign({}, userData, { id: userId });
+    return obj;
 }
 
 function addPropertyV4(userData, userId) {
