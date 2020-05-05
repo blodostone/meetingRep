@@ -16,7 +16,7 @@
 
 // }
 
-function buildObjectV2(keysList, valuesList) {
+function buildObject(keysList, valuesList) {
     let obj = keysList.raduce((acc, key, index) => {
         return {...acc, [key]: valuesList[index] };
     }, obj);
