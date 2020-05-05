@@ -18,13 +18,13 @@ const customers = {
 //3.  sort
 
 
-function getCustomersList(obj) {
+function markAdmins(obj) {
     return Object.entries(obj).map(
         (arr) => Object.assign(obj, { id: arr[0] })
     ).sort((a, b) => a.age - b.age);
 }
 
-console.log(getCustomersList(customers));
+console.log(markAdmins(customers));
 
 // let user = {
 //     name: "Test",
