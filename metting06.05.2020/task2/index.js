@@ -11,9 +11,15 @@ const users = [
     { id: '4', name: 'Tad' },
 ];
 
+const adminsIds = ['1', '3'];
+
 function markAdmins(users, ids) {
     return users.map(user => {
-        const isAdmin = ids.includes(id);
+        const isAdmin = ids.includes(user.id);
         return {...users, isAdmin }
     });
 }
+
+const result = markAdmins(users, adminsIds);
+
+console.log(result);
