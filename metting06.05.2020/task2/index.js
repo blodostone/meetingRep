@@ -14,6 +14,10 @@ const users = [
 function markAdmins(users, ids) {
     return users.map(user => {
         const isAdmin = ids.includes(id);
-        return {...user, isAdmin }
+        if ({...user, isAdmin }) {
+            return true;
+        } else {
+            false;
+        }
     })
 }
