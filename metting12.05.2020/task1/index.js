@@ -1,7 +1,7 @@
 // input: none
 // output: function
 
-function makeCounter() {
+export function makeCounter() {
 
     let counter = 0;
 
@@ -10,6 +10,6 @@ function makeCounter() {
     };
 };
 
-const counter1 = makeCounter();
+// const counter1 = makeCounter();
 
-console.log(counter1());
+// console.log(counter1());
