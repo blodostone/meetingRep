@@ -63,6 +63,9 @@ function onToggleTask(event) {
 
 }
 
+const toDoListElem = document.querySelector('.list');
+toDoListElem.addEventListener('click', onToggleTask);
+
 // algo
 //1. find btn, input 
 //2. (if) for check input empty or not empty.
