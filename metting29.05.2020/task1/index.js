@@ -22,18 +22,18 @@ const renderTasks = tasksList => {
     const tasksElems = tasksList
         .slice()
         .sort((a, b) => a.done - b.done)
-        .map((task) => {
+        .map(({ text, done, id }) => {
             const listItemElem = document.createElement('li');
             listItemElem.classList.add('list__item');
             const checkbox = document.createElement('input');
             checkbox.setAttribute('type', 'checkbox');
-            checkbox.setAttribute('data-id', task.id);
-            checkbox.checked = task.done;
+            checkbox.setAttribute('data-id', id);
+            checkbox.checked = done;
             checkbox.classList.add('list__item-checkbox');
-            if (task.done) {
+            if (done) {
                 listItemElem.classList.add('list__item_done');
             }
-            listItemElem.append(checkbox, task.text);
+            listItemElem.append(checkbox, text);
 
             return listItemElem;
         });
