@@ -68,6 +68,26 @@ function onToggleTask(event) {
 //2. (if) for check input empty or not empty.
 //3. add new obj for list
 //4. render tasks
-function onCreateTask(event) {
+
+const createBtnElem = document
+    .querySelector('.create-task-btn')
+    .addEventListener('click', onCreateTask);
+
+function onCreateTask() {
     //TODO
-}
+    const inputElem = document.querySelector('.task-input');
+    if (!inputElem.value) {
+        return;
+    }
+    inputElem.value = '';
+
+    tasks.push({
+        done: false,
+        createData: new Date().toString(),
+
+    });
+    renderTasks(tasks);
+
+};
+
+createBtnElem.addEventListener('click', onCreateTask);
