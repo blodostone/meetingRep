@@ -63,9 +63,6 @@ function onToggleTask(event) {
 
 }
 
-const toDoListElem = document.querySelector('.list');
-toDoListElem.addEventListener('click', onToggleTask);
-
 // algo
 //1. find btn, input 
 //2. (if) for check input empty or not empty.
@@ -79,7 +76,8 @@ const createBtnElem = document
 function onCreateTask() {
     //TODO
     const inputElem = document.querySelector('.task-input');
-    if (!inputElem.value) {
+    const inputValue = inputElem.value;
+    if (!inputValue) {
         return;
     }
 
@@ -90,7 +88,7 @@ function onCreateTask() {
     tasks.push({
         done: false,
         createData: new Date().toString(),
-        text: inputElem.value,
+        text: inputValue,
         id: Math.random().toString()
     });
 
