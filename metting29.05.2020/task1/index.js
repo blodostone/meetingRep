@@ -92,4 +92,4 @@ function onCreateTask() {
 
     renderTasks(tasks);
 }
-createBtnElem.addEventListener('click', onCreateTask);
+onCreateTask();
