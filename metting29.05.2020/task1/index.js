@@ -82,17 +82,15 @@ function onCreateTask() {
 
     inputElem.value = '';
 
-    const addLength = tasks.lenth++;
+    // const addLength = tasks.lenth++;
 
     tasks.push({
         done: false,
         createData: new Date().toString(),
         text: inputElem.value,
-        // id: Math.random().toString()
-        id: addLength.toString()
+        id: Math.random().toString()
     });
 
 
     renderTasks(tasks);
 }
-onCreateTask();
