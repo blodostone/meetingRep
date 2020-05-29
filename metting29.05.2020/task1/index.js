@@ -86,7 +86,7 @@ function onCreateTask() {
         done: false,
         createData: new Date().toString(),
         text: inputElem.value,
-        id: Math.random().soString()
+        id: Math.random().toString()
     });
 
 
