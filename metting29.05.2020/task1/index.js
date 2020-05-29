@@ -89,8 +89,6 @@ tasks.push({
     id: Math.random().soString()
 });
 
-
 renderTasks(tasks);
-
 
 createBtnElem.addEventListener('click', onCreateTask);
