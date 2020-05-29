@@ -79,15 +79,18 @@ function onCreateTask() {
     if (!inputElem.value) {
         return;
     }
-    inputElem.value = '';
-
-    tasks.push({
-        done: false,
-        createData: new Date().toString(),
-
-    });
-    renderTasks(tasks);
-
 };
+inputElem.value = '';
+
+tasks.push({
+    done: false,
+    createData: new Date().toString(),
+    text: inputElem.value,
+    id: Math.random().soString()
+});
+
+
+renderTasks(tasks);
+
 
 createBtnElem.addEventListener('click', onCreateTask);
