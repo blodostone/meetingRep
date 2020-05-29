@@ -10,11 +10,11 @@
 const listElem = document.querySelector('.list');
 
 const tasks = [
-    { text: 'Buy milk', done: false, id: '1' },
-    { text: 'Pick up Tom from airport', done: false, id: '2' },
-    { text: 'Visit party', done: false, id: '3' },
-    { text: 'Visit doctor', done: true, id: '4' },
-    { text: 'Buy meat', done: true, id: '5' },
+    { text: 'Buy milk', done: false, createDate: '2019-11-24T15:51:32.222Z', id: '1' },
+    { text: 'Pick up Tom from airport', done: false, createDate: '2019-11-25T15:51:32.222Z', id: '2' },
+    { text: 'Visit party', done: false, createDate: '2019-11-26T15:51:32.222Z', id: '3' },
+    { text: 'Visit doctor', done: true, createDate: '2019-11-27T15:51:32.222Z', id: '4' },
+    { text: 'Buy meat', done: true, createDate: '2019-11-28T15:51:32.222Z', id: '5' },
 ];
 
 const renderTasks = tasksList => {
