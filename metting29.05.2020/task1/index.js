@@ -79,16 +79,17 @@ function onCreateTask() {
     if (!inputElem.value) {
         return;
     }
-};
-inputElem.value = '';
 
-tasks.push({
-    done: false,
-    createData: new Date().toString(),
-    text: inputElem.value,
-    id: Math.random().soString()
-});
+    inputElem.value = '';
 
-renderTasks(tasks);
+    tasks.push({
+        done: false,
+        createData: new Date().toString(),
+        text: inputElem.value,
+        id: Math.random().soString()
+    });
 
+
+    renderTasks(tasks);
+}
 createBtnElem.addEventListener('click', onCreateTask);
