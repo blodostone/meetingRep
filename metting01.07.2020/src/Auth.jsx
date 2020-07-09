@@ -7,7 +7,7 @@ import Logout from './Logout';
 class Auth extends React.Component {
     
     constructor() {
-        super();
+        super()
 
         this.state = {
             inLoggedIn: false,
