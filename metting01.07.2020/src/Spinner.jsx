@@ -3,7 +3,7 @@ import React from 'react'
 
 
 const Spinner = ({size}) => {
-    const style = {
+    const styles = {
         display: 'inline-block',
         border: `${size}px solid #ccc`,
         borderLeftColor: 'transparent',
@@ -11,7 +11,7 @@ const Spinner = ({size}) => {
         borderRadius: '50%',
       };
      return (
-        <span style={style} className="spinner"></span>
+        <span style={styles} className="spinner"></span>
      )
 }
 
