@@ -1,74 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { render } from 'sass';
+import React, { useState, useEffect } from 'react';
 
-//algo
-//1. create empty state ++++
-//2. make http call on componentDidMount & update state ++++
-//3. update render to show user data ++++
-//4. handle userId change ++++
+const User = ({ match }) => {
+  const { userId } = match.params;
 
-
-class User extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      userAvatal: null,
-      userName: null,
-      userLocation: null,
-    }
+  // inp: userid - string
+  // out: promise
+  function fetchUser(userId) {
+    return fetch(`https://api.github.com/users/${userId}`).then((response) =>
+      response.json().then((data) => setUserData(data))
+    );
   }
 
-  componentDidMount() {
-    this.getUserData(this.props.match.params.userId)
-  }
+  const [userData, setUserData] = useState('');
 
-  componentDidUpdate(prevProps) {
-    const curUserId = this.props.match.params.userId
-    if(prevProps.match.params.userId != curUserId) {
-      this.getUserData(curUserId);
-    }
-  }
+  useEffect(() => {
+    fetchUser(userId);
+  }, [match]);
 
-  getUserData = userId => {
-    fetch(`https://api.github.com/users/${userId}`)
-     .then(response => response.json())
-     .then(userData => {
-       const {avatar_url, name, location} = userData;
-       this.setState({
-        userAvatal: avatar_url,
-        userName: name,
-        userLocation: location,
-       });
-     })
+  const { name, location, avatar_url } = userData;
 
-     //TODO make error handler
-  }
-
-  render() {
-
-    const { avatar, name, location } = this.state;
-
-    if(!avatar || !name || !location) {
-      return null;
-    }
-
-    return (
-      <div className="user">
-       <img 
-        alt="User Avatar" 
-        className="user__avatar"
-        src={avatar} 
-       />
-       <div className="user__info">
-         <span className="user__name">{name}</span>
-         <span className="user__location">{location}</span>
-       </div>
-     </div>
-    )
-  }
-}
+  return (
+    <div className="user">
+      <img alt="User Avatar" src={avatar_url} className="user__avatar" />
+      <div className="user__info">
+        <span className="user__name">{name}</span>
+        <span className="user__location">{location}</span>
+      </div>
+    </div>
+  );
+};
+export default User;
 
 
 // const User = () => {
